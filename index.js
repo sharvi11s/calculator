@@ -33,7 +33,7 @@ function tokenize(expression) {  // created a function tokenize with expression 
             }
 
 
-            if ("+-*/()√".includes(char)) {   // condition to check if the expression is an operator
+            if ("+-*/()√²".includes(char)) {   // condition to check if the expression is an operator
                 tokens.push(char);  // push to tokens array
             }
         }
@@ -60,36 +60,39 @@ function calculate() {
         let position = 0; // tells us which position we are at
 
         function parseFactor() {
-            // Get the current token
+
             let token = tokens[position];
 
-            // If it is a number, return it
+            let result;
+
             if (typeof token === "number") {
                 position++;
-                return token;
+                result = token;
             }
 
-            // for calculations involving square roots
-            if (token === "√") {
+            else if (token === "√") {
                 position++;
-                return Math.sqrt(parseFactor());
+                result = Math.sqrt(parseFactor());
             }
 
-            // for calculations involving negative numbers
-            if (token === "-") {
+            else if (token === "-") {
                 position++;
-                return -parseFactor();
+                result = -parseFactor();
             }
 
-            // If it is (, calculate everything inside ()
-            if (token === "(") {
-                position++; // skip (
-
-                let result = parseExpression();  // calculate everything inside the parentheses
-                position++; // skip )
-
-                return result;  //  timeComplexity : O(n) (even tho TC of parseFactor() is O(1), since tokenize() is O(n), hence...)
+            else if (token === "(") {
+                position++;
+                result = parseExpression();
+                position++;
             }
+
+            // postfix square
+            if (tokens[position] === "²") {
+                position++;
+                result = result * result;
+            }
+
+            return result;
         }
 
         function parseTerm() {   // for multiplication and division operations
@@ -146,6 +149,12 @@ function squareRoot() {
     display.value = Math.sqrt(Number(display.value));
 }
 
+// goal of this function is to solve squaring problems
+function square() {
+    display.value = Number(display.value) ** 2;
+}
+
+
 // goal of this function is that rather than giving number inputs by clicking on the screen we can now use they keyboard
 document.addEventListener("keydown", function(event) {
 
@@ -164,12 +173,16 @@ document.addEventListener("keydown", function(event) {
         calculate();
     }
 
-    // square roots
-    // square root
-    else if (event.key === "r") {
-        appendToDisplay("√")
+    // Shift + R = square
+    else if (event.shiftKey && event.key.toLowerCase() === "r") {
+        appendToDisplay("²");
     }
-    
+
+    // r = square root
+    else if (event.key.toLowerCase() === "r") {
+        appendToDisplay("√");
+    }
+
     // Numbers + operators
     else if (
         (event.key >= "0" && event.key <= "9") ||
