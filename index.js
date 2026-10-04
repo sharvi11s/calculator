@@ -1,26 +1,19 @@
 const display = document.getElementById("display");
 
-
 function appendToDisplay(input){
     display.value += input;
 }
 
-
 function clearDisplay(){
     display.value = "";
 }
-
 
 function deleteLast() {
     display.value = display.value.slice(0, -1);
 }
 
 
-
-
 // goal of this function is to turn a full mathematical expression into small tokens like [5, "+", 2, "-", 3]
-
-
 function tokenize(expression) {  // created a function tokenize with expression as its input
     let tokens = []; // this array will store all our tokens
     let number = ""; // temporarily stores digits while we're building a number
@@ -40,7 +33,7 @@ function tokenize(expression) {  // created a function tokenize with expression 
             }
 
 
-            if ("+-*/()".includes(char)) {   // condition to check if the expression is an operator
+            if ("+-*/()√".includes(char)) {   // condition to check if the expression is an operator
                 tokens.push(char);  // push to tokens array
             }
         }
@@ -74,6 +67,12 @@ function calculate() {
             if (typeof token === "number") {
                 position++;
                 return token;
+            }
+
+            // for calculations involving square roots
+            if (token === "√") {
+                position++;
+                return Math.sqrt(parseFactor());
             }
 
             // for calculations involving negative numbers
@@ -142,6 +141,10 @@ function calculate() {
     }
 }
 
+// goal of this function is to solve square root problems
+function squareRoot() {
+    display.value = Math.sqrt(Number(display.value));
+}
 
 // goal of this function is that rather than giving number inputs by clicking on the screen we can now use they keyboard
 document.addEventListener("keydown", function(event) {
@@ -161,6 +164,12 @@ document.addEventListener("keydown", function(event) {
         calculate();
     }
 
+    // square roots
+    // square root
+    else if (event.key === "r") {
+        appendToDisplay("√")
+    }
+    
     // Numbers + operators
     else if (
         (event.key >= "0" && event.key <= "9") ||
