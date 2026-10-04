@@ -137,3 +137,31 @@ function calculate() {
     }
 }
 
+
+// goal of this function is that rather than giving number inputs by clicking on the screen we can now use they keyboard
+document.addEventListener("keydown", function(event) {
+
+    // Ctrl + Backspace = AC
+    if (event.ctrlKey && event.key === "Backspace") {  // main worker is event.
+        clearDisplay();
+    }
+
+    // Backspace = DEL
+    else if (event.key === "Backspace") {
+        deleteLast();
+    }
+
+    // Enter = calculate
+    else if (event.key === "Enter") {
+        calculate();
+    }
+
+    // Numbers + operators
+    else if (
+        (event.key >= "0" && event.key <= "9") ||
+        ["+", "-", "*", "/", "(", ")", "."].includes(event.key)
+    ) {
+        appendToDisplay(event.key);
+    }
+
+});
