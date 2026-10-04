@@ -52,6 +52,10 @@ button:active{
     color: white;
 }
 
+.operator-btn-2{
+    background-color: #77b7ff;
+}
+
 .operator{
     background-color: #212121;
     color: white;

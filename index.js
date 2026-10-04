@@ -33,7 +33,7 @@ function tokenize(expression) {  // created a function tokenize with expression 
             }
 
 
-            if ("+-*/()√²".includes(char)) {   // condition to check if the expression is an operator
+            if ("+-*/()√²^".includes(char)) {   // condition to check if the expression is an operator
                 tokens.push(char);  // push to tokens array
             }
         }
@@ -95,14 +95,28 @@ function calculate() {
             return result;
         }
 
-        function parseTerm() {   // for multiplication and division operations
+        function parsePower() {
             let result = parseFactor();
+
+            while (tokens[position] === "^") {
+
+                position++;
+                let exponent = parseFactor();
+
+                result = result ** exponent;
+            }
+
+            return result;
+        }
+
+        function parseTerm() {   // for multiplication and division operations
+            let result = parsePower();
 
             while (tokens[position] === "*" || tokens[position] === "/") {
                 let operator = tokens[position];
                 position++;
 
-                let nextNumber = parseFactor();
+                let nextNumber = parsePower();
 
                 if (operator === "*") {
                     result = result * nextNumber;
@@ -154,12 +168,17 @@ function square() {
     display.value = Number(display.value) ** 2;
 }
 
+// goal of this function is to solve problems involving a power more that 2
+function power() {
+    display.value += "^";
+}
+
 
 // goal of this function is that rather than giving number inputs by clicking on the screen we can now use they keyboard
 document.addEventListener("keydown", function(event) {
 
-    // Ctrl + Backspace = AC
-    if (event.ctrlKey && event.key === "Backspace") {  // main worker is event.
+    // Shift + Backspace = AC
+    if (event.shiftKey && event.key === "Backspace") {
         clearDisplay();
     }
 
@@ -178,8 +197,13 @@ document.addEventListener("keydown", function(event) {
         appendToDisplay("²");
     }
 
-    // r = square root
-    else if (event.key.toLowerCase() === "r") {
+    // Shift + 6 = power
+    else if (event.shiftKey && event.key === "^") {
+        appendToDisplay("^");
+    }
+
+    // R = square root
+    else if (!event.ctrlKey && event.key.toLowerCase() === "r") {
         appendToDisplay("√");
     }
 
