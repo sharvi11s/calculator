@@ -30,7 +30,7 @@ function tokenize(expression) {  // created a function tokenize with expression 
         let char = expression[i]; // stores the current character in char
 
 
-        if (!isNaN(char) || char === ".") {   // checks if the character is a number or a decimal point
+        if ((char >= "0" && char <= "9") || char === ".") {   // checks if the character is a number or a decimal point
             number += char; // if yes then add the number to the existing characters (1(y)->1, 2(y)->12, 5(y)->125 .(y)->125. 6(y)->125.6)
         }
         else {    // condition for when we reach an operator
@@ -76,6 +76,11 @@ function calculate() {
                 return token;
             }
 
+            // for calculations involving negative numbers
+            if (token === "-") {
+                position++;
+                return -parseFactor();
+            }
 
             // If it is (, calculate everything inside ()
             if (token === "(") {
