@@ -32,9 +32,31 @@ function tokenize(expression) {  // created a function tokenize with expression 
                 number = "";  // since the number is already pushed to tokens, we reset the number variable to "" to build the next number
             }
 
-
-            if ("+-*/()√²^".includes(char)) {   // condition to check if the expression is an operator
-                tokens.push(char);  // push to tokens array
+            if (expression.startsWith("sin", i)) {
+                tokens.push("sin");
+                i += 2;
+            }
+            else if (expression.startsWith("cos", i)) {
+                tokens.push("cos");
+                i += 2;
+            }
+            else if (expression.startsWith("tan", i)) {
+                tokens.push("tan");
+                i += 2;
+            }
+            else if (expression.startsWith("log", i)) {
+                tokens.push("log");
+                i += 2;
+            }
+            else if (expression.startsWith("ln", i)) {
+                tokens.push("ln");
+                i += 1;
+            }
+            else if (char === "e") {
+                tokens.push("e");
+            }
+            else if ("+-*/()√²^".includes(char)) {
+                tokens.push(char);
             }
         }
     }
@@ -73,6 +95,36 @@ function calculate() {
             else if (token === "√") {
                 position++;
                 result = Math.sqrt(parseFactor());
+            }
+
+            else if (token === "sin") {
+                position++;
+                result = Math.round(Math.sin(parseFactor() * Math.PI / 180) * 1e10) / 1e10;
+            }
+
+            else if (token === "cos") {
+                position++;
+                result = Math.round(Math.cos(parseFactor() * Math.PI / 180) * 1e10) / 1e10;
+            }
+
+            else if (token === "tan") {
+                position++;
+                result = Math.round(Math.tan(parseFactor() * Math.PI / 180) * 1e10) / 1e10;
+            }
+
+            else if (token === "log") {
+                position++;
+                result = Math.log10(parseFactor());
+            }
+
+            else if (token === "ln") {
+                position++;
+                result = Math.log(parseFactor());
+            }
+
+            else if (token === "e") {
+                position++;
+                result = Math.E;
             }
 
             else if (token === "-") {
@@ -205,6 +257,36 @@ document.addEventListener("keydown", function(event) {
     // R = square root
     else if (!event.ctrlKey && event.key.toLowerCase() === "r") {
         appendToDisplay("√");
+    }
+
+    // s = sin
+    else if (event.key.toLowerCase() === "s") {
+        appendToDisplay("sin");
+    }
+
+    // c = cos
+    else if (event.key.toLowerCase() === "c") {
+        appendToDisplay("cos");
+    }
+
+    // t = tan
+    else if (event.key.toLowerCase() === "t") {
+        appendToDisplay("tan");
+    }
+
+    // Shift + l = ln
+    else if (event.shiftKey && event.key.toLowerCase() === "l") {
+        appendToDisplay("ln");
+    }
+
+    // l = log
+    else if (event.key.toLowerCase() === "l") {
+        appendToDisplay("log");
+    }
+
+    // e = e
+    else if (event.key.toLowerCase() === "e") {
+        appendToDisplay("e");
     }
 
     // Numbers + operators

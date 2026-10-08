@@ -12,13 +12,19 @@
     <div id="calculator">
         <input id="display" readonly>
         <div id="keys">
+            <button onclick="appendToDisplay('log')" class="operator-btn-4">log</button>
+            <button onclick="appendToDisplay('ln')" class="operator-btn-4">ln</button>
+            <button onclick="appendToDisplay('e')" class="operator-btn-4">e</button>
+            <button onclick="appendToDisplay('sin')" class="operator-btn-3"> sin </button>
+            <button onclick="appendToDisplay('cos')" class="operator-btn-3"> cos </button>
+            <button onclick="appendToDisplay('tan')" class="operator-btn-3"> tan </button>
             <button onclick="appendToDisplay('√')" class="operator-btn-2"> √x </button>
             <button onclick="power()" class="operator-btn-2"> xʸ </button>
             <button onclick="square()" class="operator-btn-2"> x² </button>
             <button onclick="deleteLast()" class="operator">DEL</button>
             <button onclick="clearDisplay()" class="operator"> AC </button>
-            <button onclick="appendToDisplay('(')" class="operator-btn">(</button>
-            <button onclick="appendToDisplay(')')" class="operator-btn">)</button>
+            <button onclick="appendToDisplay('(')" class="operator-btn"> ( </button>
+            <button onclick="appendToDisplay(')')" class="operator-btn"> ) </button>
             <button onclick="appendToDisplay('/')" class="operator-btn"> / </button>
             <button onclick="appendToDisplay('7')"> 7 </button>
             <button onclick="appendToDisplay('8')"> 8 </button>
