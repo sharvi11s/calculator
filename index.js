@@ -64,21 +64,13 @@ function tokenize(expression) {  // created a function tokenize with expression 
         }
     }
 
-
     if (number !== "") {
         tokens.push(Number(number)); // after the loop ends we manually push the final number because there is no operator present
     }
-
-
     return tokens;  // timeComplexity : O(n) , spaceComplexity : O(n)
 }
 
-
-
-
 // goal of this function is to arrange everything together properly and calculate and finally display the answer
-
-
 function calculate() {
     try {
         let tokens = tokenize(display.value); //uses the tokenize function created earlier
