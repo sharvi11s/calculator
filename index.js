@@ -52,10 +52,13 @@ function tokenize(expression) {  // created a function tokenize with expression 
                 tokens.push("ln");
                 i += 1;
             }
-            else if (char === "e") {
+            else if (expression.startsWith("e", i)) {
                 tokens.push("e");
             }
-            else if ("+-*/()√²^".includes(char)) {
+            else if (char === "π") {
+                tokens.push("π");
+            }
+            else if ("+-*/()√²^!".includes(char)) {
                 tokens.push(char);
             }
         }
@@ -127,6 +130,11 @@ function calculate() {
                 result = Math.E;
             }
 
+            else if (token === "π") {
+                position++;
+                result = Math.PI;
+            }
+
             else if (token === "-") {
                 position++;
                 result = -parseFactor();
@@ -142,6 +150,17 @@ function calculate() {
             if (tokens[position] === "²") {
                 position++;
                 result = result * result;
+            }
+
+            if (tokens[position] === "!") {
+                position++;
+                let factorial = 1;
+
+                for (let i = 1; i <= result; i++) {
+                    factorial = factorial * i;
+                }
+
+                result = factorial;
             }
 
             return result;
@@ -289,10 +308,15 @@ document.addEventListener("keydown", function(event) {
         appendToDisplay("e");
     }
 
+    // p = pi
+    else if (event.key.toLowerCase() === "p") {
+        appendToDisplay("π");
+    }
+
     // Numbers + operators
     else if (
         (event.key >= "0" && event.key <= "9") ||
-        ["+", "-", "*", "/", "(", ")", "."].includes(event.key)
+        ["+", "-", "*", "/", "(", ")", ".", "!"].includes(event.key)
     ) {
         appendToDisplay(event.key);
     }
