@@ -29,7 +29,7 @@
     <main class="operations-container">
 
         <header class="operations-heading">
-            <p class="eyebrow">MYCALC MANUAL / KEYBOARD</p>
+            <p class="eyebrow">MyCalc Manual / KEYBOARD</p>
 
             <h1>
                 Your keyboard, <span>your calculator.</span>
@@ -45,15 +45,15 @@
             </a>
         </header>
 
-        <!-- Simple Calculator -->
+        <!-- Keyboard Guide -->
         <section class="operation-section">
 
             <div class="operation-section-heading">
                 <span class="operation-number">01</span>
 
                 <div>
-                    <h2>Simple Calculator</h2>
-                    <p>Everyday calculations using your keyboard.</p>
+                    <h2>Keyboard Shortcuts</h2>
+                    <p>Everything you need to calculate faster using your keyboard.</p>
                 </div>
             </div>
 
@@ -62,7 +62,7 @@
 
                     <thead>
                         <tr>
-                            <th>Key</th>
+                            <th>Key / Shortcut</th>
                             <th>Action</th>
                             <th>Example</th>
                         </tr>
@@ -77,26 +77,32 @@
 
                         <tr>
                             <td><kbd>+</kbd></td>
-                            <td>Addition.</td>
+                            <td>Add numbers.</td>
                             <td><code>5 + 3</code></td>
                         </tr>
 
                         <tr>
                             <td><kbd>-</kbd></td>
-                            <td>Subtraction.</td>
-                            <td><code>9 - 4</code></td>
+                            <td>Subtract numbers or enter a negative number.</td>
+                            <td><code>5 - 8</code></td>
                         </tr>
 
                         <tr>
                             <td><kbd>*</kbd></td>
-                            <td>Multiplication.</td>
+                            <td>Multiply numbers.</td>
                             <td><code>6 * 3</code></td>
                         </tr>
 
                         <tr>
                             <td><kbd>/</kbd></td>
-                            <td>Division.</td>
+                            <td>Divide numbers.</td>
                             <td><code>12 / 4</code></td>
+                        </tr>
+
+                        <tr>
+                            <td><kbd>(</kbd> <kbd>)</kbd></td>
+                            <td>Group parts of an expression using parentheses.</td>
+                            <td><code>(2 + 3) * 4</code></td>
                         </tr>
 
                         <tr>
@@ -106,134 +112,26 @@
                         </tr>
 
                         <tr>
-                            <td><kbd>(</kbd> <kbd>)</kbd></td>
-                            <td>Group expressions using parentheses.</td>
-                            <td><code>(2 + 3) * 4</code></td>
+                            <td><kbd>!</kbd></td>
+                            <td>Enter the factorial operator.</td>
+                            <td><code>5!</code></td>
                         </tr>
 
                         <tr>
                             <td><kbd>Enter</kbd></td>
-                            <td>Calculate the result, if keyboard evaluation is enabled.</td>
-                            <td><code>5 + 3 = 8</code></td>
+                            <td>Calculate the current expression.</td>
+                            <td><code>5 + 3 → 8</code></td>
                         </tr>
 
                         <tr>
                             <td><kbd>Backspace</kbd></td>
-                            <td>Delete the last character, if supported.</td>
+                            <td>Delete the last character.</td>
                             <td><code>123 → 12</code></td>
                         </tr>
 
                         <tr>
-                            <td><kbd>Ctrl</kbd> + <kbd>Backspace</kbd></td>
-                            <td>Clear the display, if supported.</td>
-                            <td>Start a new calculation.</td>
-                        </tr>
-                    </tbody>
-
-                </table>
-            </div>
-
-        </section>
-
-        <!-- Engineering Calculator -->
-        <section class="operation-section">
-
-            <div class="operation-section-heading">
-                <span class="operation-number engineering-number">02</span>
-
-                <div>
-                    <h2>Engineering Calculator</h2>
-                    <p>Shortcuts for scientific functions and expressions.</p>
-                </div>
-            </div>
-
-            <div class="operation-table-wrapper">
-                <table class="operation-table">
-
-                    <thead>
-                        <tr>
-                            <th>Key / Shortcut</th>
-                            <th>Action</th>
-                            <th>Function</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <tr>
-                            <td><kbd>r</kbd></td>
-                            <td>Insert the square-root function.</td>
-                            <td><code>√x</code></td>
-                        </tr>
-
-                        <tr>
-                            <td><kbd>Shift</kbd> + <kbd>R</kbd></td>
-                            <td>Insert the square operation.</td>
-                            <td><code>x²</code></td>
-                        </tr>
-
-                        <tr>
-                            <td><kbd>Shift</kbd> + <kbd>6</kbd></td>
-                            <td>Insert the power operator.</td>
-                            <td><code>xʸ</code></td>
-                        </tr>
-
-                        <tr>
-                            <td><kbd>s</kbd></td>
-                            <td>Insert the sine function.</td>
-                            <td><code>sin</code></td>
-                        </tr>
-
-                        <tr>
-                            <td><kbd>c</kbd></td>
-                            <td>Insert the cosine function.</td>
-                            <td><code>cos</code></td>
-                        </tr>
-
-                        <tr>
-                            <td><kbd>t</kbd></td>
-                            <td>Insert the tangent function.</td>
-                            <td><code>tan</code></td>
-                        </tr>
-
-                        <tr>
-                            <td><kbd>l</kbd></td>
-                            <td>Insert the common logarithm.</td>
-                            <td><code>log</code></td>
-                        </tr>
-
-                        <tr>
-                            <td><kbd>Shift</kbd> + <kbd>L</kbd></td>
-                            <td>Intended shortcut for the natural logarithm; verify current implementation.</td>
-                            <td><code>ln</code></td>
-                        </tr>
-
-                        <tr>
-                            <td><kbd>0–9</kbd></td>
-                            <td>Enter numbers in expressions.</td>
-                            <td><code>2 + 3</code></td>
-                        </tr>
-
-                        <tr>
-                            <td><kbd>+</kbd> <kbd>-</kbd> <kbd>*</kbd> <kbd>/</kbd></td>
-                            <td>Enter arithmetic operators.</td>
-                            <td><code>2 + 3 * 4</code></td>
-                        </tr>
-
-                        <tr>
-                            <td><kbd>(</kbd> <kbd>)</kbd></td>
-                            <td>Group expressions and function inputs.</td>
-                            <td><code>sin(30)</code></td>
-                        </tr>
-
-                        <tr>
-                            <td><kbd>Backspace</kbd></td>
-                            <td>Delete the last character, if supported.</td>
-                            <td>Edit an expression.</td>
-                        </tr>
-
-                        <tr>
-                            <td><kbd>Ctrl</kbd> + <kbd>Backspace</kbd></td>
-                            <td>Clear the display, if supported.</td>
+                            <td><kbd>Shift</kbd> + <kbd>Backspace</kbd></td>
+                            <td>Clear the display (AC) on the Engineering Calculator.</td>
                             <td>Start a new calculation.</td>
                         </tr>
                     </tbody>
