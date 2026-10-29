@@ -1,3 +1,4 @@
+ 
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,9 +13,20 @@
 
 <body>
 
+    <!-- Navigation Bar -->
+<nav class="navbar">
+    <a href="landing.html" class="logo">MyCalc<span>.</span></a>
+
+    <div class="nav-links">
+        <a href="landing.html">Home</a>
+        <a href="manual.html">Manual</a>
+        <a href="login.html" class="login-btn">Login</a>
+    </div>
+</nav>
+
     <!-- Page Heading -->
     <header class="calculator-header">
-        <p class="calculator-eyebrow">MyCalc / EVERYDAY MATHEMATICS</p>
+        <p class="calculator-eyebrow">MYCALC / EVERYDAY MATHEMATICS</p>
 
         <h1>Simple <span>Calculator.</span></h1>
 
@@ -24,34 +36,48 @@
     </header>
 
     <!-- Calculator -->
-    <div id="calculator">
+    <main id="calculator">
 
-        <input id="display" readonly aria-label="Calculator display">
+        <input
+            id="display"
+            readonly
+            aria-label="Calculator display"
+            placeholder="0"
+        >
 
         <div id="keys">
             <button onclick="deleteLast()" class="operator-0">DEL</button>
-            <button onclick="clearDisplay()" class="operator-0"> AC </button>
+            <button onclick="clearDisplay()" class="operator-0">AC</button>
             <button onclick="appendToDisplay('(')" class="operator-btn">(</button>
             <button onclick="appendToDisplay(')')" class="operator-btn">)</button>
-            <button onclick="appendToDisplay('/')" class="operator-btn"> / </button>
-            <button onclick="appendToDisplay('7')"> 7 </button>
-            <button onclick="appendToDisplay('8')"> 8 </button>
-            <button onclick="appendToDisplay('9')"> 9 </button>
-            <button onclick="appendToDisplay('x')" class="operator-btn"> x </button>
-            <button onclick="appendToDisplay('4')"> 4 </button>
-            <button onclick="appendToDisplay('5')"> 5 </button>
-            <button onclick="appendToDisplay('6')"> 6 </button>
-            <button onclick="appendToDisplay('-')" class="operator-btn"> - </button>
-            <button onclick="appendToDisplay('1')"> 1 </button>
-            <button onclick="appendToDisplay('2')"> 2 </button>
-            <button onclick="appendToDisplay('3')"> 3 </button>
-            <button onclick="appendToDisplay('+')" class="operator-btn"> + </button>
-            <button onclick="appendToDisplay('0')"> 0 </button>
-            <button onclick="appendToDisplay('.')"> . </button>
-            <button onclick="calculate()" class="operator"> = </button>
+            <button onclick="appendToDisplay('/')" class="operator-btn">/</button>
+
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button onclick="appendToDisplay('x')" class="operator-btn">×</button>
+
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button onclick="appendToDisplay('-')" class="operator-btn">−</button>
+
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button onclick="appendToDisplay('+')" class="operator-btn">+</button>
+
+            <button onclick="appendToDisplay('0')">0</button>
+            <button onclick="appendToDisplay('.')">.</button>
+            <button onclick="calculate()" class="operator">=</button>
         </div>
 
-    </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="page-footer">
+        <p>Made for the love of numbers <span>✳</span> MyCalc</p>
+    </footer>
 
     <script src="simple.js"></script>
 
