@@ -316,4 +316,31 @@ button:focus-visible {
     }
 }
 
+/* Prevent horizontal page shifting */
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+}
 
+#calculator {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+
+#display,
+#keys {
+    width: 100%;
+    min-width: 0;
+}
+
+button {
+    min-width: 0;
+}
+
+/* Prevent buttons from shifting on hover */
+button:hover {
+    transform: none;
+}

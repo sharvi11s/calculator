@@ -1,0 +1,260 @@
+/* Functions Guide Page */
+
+.function-container {
+    flex: 1;
+    width: 100%;
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 65px 6%;
+}
+
+/* Page Heading */
+
+.function-heading {
+    max-width: 750px;
+    margin: 0 auto 65px;
+    text-align: center;
+}
+
+.function-heading h1 {
+    margin-bottom: 18px;
+}
+
+.function-heading h1 span {
+    color: var(--pink);
+}
+
+.function-heading > p:not(.eyebrow) {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.back-link {
+    display: inline-block;
+    color: var(--blue);
+    font-size: 0.92rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.back-link:hover {
+    color: var(--yellow);
+}
+
+/* Function Sections */
+
+.function-section {
+    margin-bottom: 65px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.section-number {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: #18252a;
+    color: var(--blue);
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 800;
+}
+
+.engineering-number {
+    background: #302015;
+    color: var(--orange);
+}
+
+.section-heading h2 {
+    margin-bottom: 6px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.55rem;
+    font-weight: 800;
+}
+
+.section-heading p {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    line-height: 1.6;
+}
+
+/* Table Wrapper */
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--surface);
+}
+
+/* Function Table */
+
+.function-table {
+    width: 100%;
+    min-width: 650px;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.function-table thead {
+    background: #191919;
+}
+
+.function-table th {
+    padding: 18px 22px;
+    color: var(--green);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--border);
+}
+
+.function-table td {
+    padding: 18px 22px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    border-bottom: 1px solid #252525;
+    vertical-align: top;
+}
+
+.function-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.function-table tbody tr {
+    transition: background 0.2s ease;
+}
+
+.function-table tbody tr:hover {
+    background: var(--surface-hover);
+}
+
+/* Function Names */
+
+.function-table td:first-child {
+    min-width: 180px;
+    color: var(--text);
+    font-weight: 600;
+}
+
+.function-table code {
+    display: inline-block;
+    margin-right: 5px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    background: #18252a;
+    color: var(--blue);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* Example Column */
+
+.function-table td:last-child {
+    color: var(--yellow);
+    white-space: nowrap;
+}
+
+/* Bottom Navigation */
+
+.function-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-top: 25px;
+    border-top: 1px solid var(--border);
+}
+
+.next-link {
+    display: inline-block;
+    padding: 13px 18px;
+    border-radius: 9px;
+    background: var(--pink);
+    color: #000000;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+.next-link:hover {
+    transform: translateY(-2px);
+    background: var(--yellow);
+}
+
+/* Footer */
+
+.function-page footer {
+    margin-top: auto;
+}
+
+.function-page footer span {
+    color: var(--pink);
+}
+
+/* Responsive Layout */
+
+@media (max-width: 700px) {
+    .function-container {
+        padding: 45px 5%;
+    }
+
+    .function-heading {
+        margin-bottom: 45px;
+    }
+
+    .function-section {
+        margin-bottom: 45px;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        gap: 13px;
+    }
+
+    .section-number {
+        width: 44px;
+        height: 44px;
+        border-radius: 11px;
+        font-size: 1rem;
+    }
+
+    .section-heading h2 {
+        font-size: 1.25rem;
+    }
+
+    .section-heading p {
+        font-size: 0.85rem;
+    }
+
+    .function-table th,
+    .function-table td {
+        padding: 15px 16px;
+    }
+
+    .function-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
