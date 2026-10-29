@@ -15,14 +15,23 @@
             <button onclick="appendToDisplay('π')" class="operator-btn-4">π</button>
             <button onclick="appendToDisplay('!')" class="operator-btn-4">!</button>
             <button onclick="appendToDisplay('e')" class="operator-btn-4">e</button>
-            <button onclick="appendToDisplay('log')" class="operator-btn-3">log</button>
-            <button onclick="appendToDisplay('ln')" class="operator-btn-3">ln</button>
+            <button onclick="appendToDisplay('log')" class="operator-btn-4">log</button>
+            <button onclick="appendToDisplay('ln')" class="operator-btn-4   ">ln</button>
             <button onclick="appendToDisplay('sin')" class="operator-btn-3"> sin </button>
             <button onclick="appendToDisplay('cos')" class="operator-btn-3"> cos </button>
             <button onclick="appendToDisplay('tan')" class="operator-btn-3"> tan </button>
+            <button onclick="inverseSin()" class="operator-btn-3">sin⁻¹</button>
+            <button onclick="inverseCos()" class="operator-btn-3">cos⁻¹</button>
+            <button onclick="inverseTan()" class="operator-btn-3">tan⁻¹</button>
+            <button id="angleModeBtn" onclick="toggleAngleMode()" class="operator-btn-3">DEG</button>
             <button onclick="appendToDisplay('√')" class="operator-btn-2"> √x </button>
+            <button onclick="cubeRoot()" class="operator-btn-2">∛x</button>
             <button onclick="power()" class="operator-btn-2"> xʸ </button>
             <button onclick="square()" class="operator-btn-2"> x² </button>
+            <button onclick="cube()" class="operator-btn-2"> x³ </button>
+            <button onclick="convertFractionDecimal()" class="operator-btn-5">F↔D</button>
+            <button onclick="reciprocal()" class="operator-btn-5">1/x</button>
+            <button onclick="absoluteValue()" class="operator-btn-5">|x|</button>
             <button onclick="deleteLast()" class="operator">DEL</button>
             <button onclick="clearDisplay()" class="operator"> AC </button>
             <button onclick="appendToDisplay('(')" class="operator-btn"> ( </button>
@@ -46,6 +55,6 @@
         </div>
     </div>
 
-    <script src="index.js"></script>
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>
