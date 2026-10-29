@@ -1,0 +1,226 @@
+/* ==============================
+   MyCalc - Simple Calculator
+   ============================== */
+
+/* Color palette */
+:root {
+    --black: #000000;
+    --surface: #101010;
+    --surface-hover: #191919;
+    --blue: #A1D5EE;
+    --green: #D0F3A3;
+    --yellow: #FFFBA5;
+    --pink: #FFBBE4;
+    --orange: #F98118;
+    --white: #FFFFFF;
+    --muted: #B8B8B8;
+    --border: #333333;
+}
+
+/* Reset */
+* {
+    box-sizing: border-box;
+}
+
+/* Page layout */
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    background: var(--black);
+    color: var(--white);
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* Page heading */
+.calculator-header {
+    width: min(760px, 100%);
+}
+
+.calculator-eyebrow {
+    margin: 0 0 6px;
+    color: var(--green);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.calculator-header h1 {
+    margin: 0;
+    color: var(--white);
+    font-family: Arial, sans-serif;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.calculator-header h1 span {
+    color: var(--pink);
+}
+
+.calculator-subtitle {
+    margin: 6px 0 0;
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Calculator container */
+#calculator {
+    width: min(760px, 100%);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+}
+
+/* Calculator display */
+#display {
+    width: 100%;
+    height: 76px;
+    min-height: 76px;
+    padding: 14px 18px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    outline: none;
+    background: #080808;
+    color: var(--green);
+    font-family: Arial, sans-serif;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    text-align: right;
+}
+
+/* Button grid */
+#keys {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 9px;
+}
+
+/* All buttons */
+button {
+    width: 100%;
+    min-width: 0;
+    height: 58px;
+    padding: 6px;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    background: #252525;
+    color: var(--white);
+    font-family: Arial, sans-serif;
+    font-size: 1.35rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease,
+        border-color 0.2s ease;
+}
+
+/* Button hover and interaction */
+button:hover {
+    background: #383838;
+    border-color: #555555;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+button:focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: 2px;
+}
+
+/* Red - AC and DEL */
+.operator-0 {
+    background: rgb(255, 48, 48);
+    color: #101010;
+}
+
+.operator-0:hover {
+    background: rgb(255, 73, 73);
+}
+
+/* Orange - arithmetic operators */
+.operator-btn {
+    background: var(--orange);
+    color: var(--black);
+}
+
+.operator-btn:hover {
+    background: #ff9b42;
+    border-color: var(--orange);
+    color: var(--black);
+}
+
+/* Dark - equals and special buttons */
+.operator {
+    background: #292929;
+    color: var(--white);
+    border-color: #444444;
+}
+
+.operator:hover {
+    background: var(--white);
+    color: var(--black);
+    border-color: var(--white);
+}
+
+/* Smaller screens */
+@media (max-width: 480px) {
+    body {
+        padding: 16px 12px;
+        gap: 14px;
+    }
+
+    #calculator {
+        padding: 12px;
+        gap: 10px;
+        border-radius: 16px;
+    }
+
+    #display {
+        height: 68px;
+        min-height: 68px;
+        padding: 12px;
+        font-size: 1.8rem;
+    }
+
+    #keys {
+        gap: 7px;
+    }
+
+    button {
+        height: 52px;
+        padding: 4px;
+        border-radius: 10px;
+        font-size: 1.15rem;
+    }
+
+    .calculator-eyebrow {
+        font-size: 0.65rem;
+    }
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+        animation: none !important;
+    }
+}
