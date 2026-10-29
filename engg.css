@@ -1,0 +1,319 @@
+:root {
+    --black: #000000;
+    --surface: #101010;
+    --surface-hover: #191919;
+    --blue: #A1D5EE;
+    --green: #D0F3A3;
+    --yellow: #FFFBA5;
+    --pink: #FFBBE4;
+    --orange: #F98118;
+    --white: #FFFFFF;
+    --muted: #B8B8B8;
+    --border: #333333;
+}
+
+/* Page */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 40px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    background: var(--black, #000);
+    color: var(--white, #fff);
+    font-family: Arial, sans-serif;
+}
+
+/* Heading outside the calculator card */
+.calculator-header h1 {
+    margin: 0;
+    color: var(--white, #FFFFFF);
+    font-family: inherit;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+}
+
+.calculator-eyebrow {
+    margin: 0 0 8px;
+    color: var(--orange, #A1D5EE);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+}
+
+.calculator-header h1 {
+    margin: 0;
+    color: var(--white, #fff);
+    font-family: "Manrope", Arial, sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+}
+
+.calculator-header h1 span {
+    color: var(--blue, #A1D5EE);
+}
+
+.calculator-subtitle {
+    margin: 8px 0 0;
+    color: var(--muted, #B8B8B8);
+    font-size: 0.95rem;
+}
+
+/* Calculator container */
+#calculator {
+    width: min(1200px, 100%);
+    min-height: 85vh;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+}
+
+/* Display */
+#display {
+    width: 100%;
+    height: 120px;
+    flex-shrink: 0;
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    outline: none;
+    background: #080808;
+    color: var(--green);
+    font-family: "Inter", Arial, sans-serif;
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    font-weight: 500;
+    text-align: right;
+}
+
+/* Button grid */
+
+/* Layout for both calculator sections */
+#keys {
+    flex: 1;
+    min-height: 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(300px, 1fr);
+    gap: 18px;
+}
+
+/* Scientific functions */
+#scientific-keys {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-auto-rows: minmax(55px, 1fr);
+    gap: 10px;
+}
+
+/* Number pad and arithmetic operations */
+#basic-keys {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: repeat(5, minmax(55px, 1fr));
+    gap: 10px;
+}
+
+/* Stack the sections on smaller screens */
+@media (max-width: 800px) {
+    #keys {
+        grid-template-columns: 1fr;
+    }
+
+    #scientific-keys {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-auto-rows: minmax(50px, auto);
+    }
+
+    #basic-keys {
+        grid-template-rows: repeat(5, minmax(50px, auto));
+    }
+}
+
+
+/* All buttons */
+button {
+    width: 100%;
+    min-width: 0;
+    min-height: 60px;
+    padding: 8px 4px;
+    border: 1px solid transparent;
+    border-radius: 16px;
+    background: #252525;
+    color: var(--white);
+    font-family: inherit;
+    font-size: clamp(0.9rem, 1.6vw, 1.3rem);
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease,
+        border-color 0.2s ease;
+}
+
+button:hover {
+    background: #383838;
+    border-color: #555555;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: scale(0.96);
+}
+
+button:focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: 3px;
+}
+
+/* red - ac and del */
+.operator-0 {
+    background: rgb(255, 48, 48);
+    color: #101010;
+}
+.operator-0:hover {
+    background: rgb(255, 73, 73);
+}
+
+/* Orange - arithmetic operators */
+.operator-btn {
+    background: var(--orange);
+    color: var(--black);
+}
+
+.operator-btn:hover {
+    background: #ff9b42;
+    border-color: var(--orange);
+    color: var(--black);
+}
+
+/* Blue - powers and roots */
+.operator-btn-2 {
+    background: var(--blue);
+    color: var(--black);
+}
+
+.operator-btn-2:hover {
+    background: #c4e7f7;
+    border-color: var(--blue);
+    color: var(--black);
+}
+
+/* Yellow - trigonometry and angle mode */
+.operator-btn-3 {
+    background: var(--yellow);
+    color: var(--black);
+}
+
+.operator-btn-3:hover {
+    background: #fffcc9;
+    border-color: var(--yellow);
+    color: var(--black);
+}
+
+/* Green - constants and logarithms */
+.operator-btn-4 {
+    background: var(--green);
+    color: var(--black);
+}
+
+.operator-btn-4:hover {
+    background: #e2f8c8;
+    border-color: var(--green);
+    color: var(--black);
+}
+
+/* Pink - conversions and special functions */
+.operator-btn-5 {
+    background: var(--pink);
+    color: var(--black);
+}
+
+.operator-btn-5:hover {
+    background: #ffd4ee;
+    border-color: var(--pink);
+    color: var(--black);
+}
+
+/* Dark - delete and clear */
+.operator {
+    background: #292929;
+    color: var(--white);
+    border-color: #444444;
+}
+
+.operator:hover {
+    background: var(--white);
+    color: var(--black);
+    border-color: var(--white);
+}
+
+/* Responsive layout */
+@media (max-width: 800px) {
+    body {
+        padding: 12px;
+        align-items: flex-start;
+    }
+
+    #calculator {
+        min-height: auto;
+        padding: 16px;
+        gap: 14px;
+        border-radius: 18px;
+    }
+
+    #display {
+        height: 100px;
+    }
+
+    #keys {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        grid-template-rows: auto;
+        gap: 8px;
+    }
+
+    button {
+        min-height: 55px;
+        border-radius: 12px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 400px) {
+    #keys {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 6px;
+    }
+
+    button {
+        min-height: 48px;
+        font-size: 0.85rem;
+    }
+
+    #calculator {
+        padding: 10px;
+    }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+
