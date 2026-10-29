@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | MyCalc</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body class="auth-page">
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">MyCalc<span>.</span></a>
+
+        <div class="nav-links">
+            <a href="home.html">Home</a>
+            <a href="calculators.html">Calculators</a>
+            <a href="manual.html">Manual</a>
+        </div>
+    </nav>
+
+    <main class="auth-main">
+        <section class="auth-card">
+
+            <div class="auth-icon">↗</div>
+
+            <p class="auth-eyebrow">WELCOME BACK</p>
+
+            <h1>Good to see <span>you.</span></h1>
+
+            <p class="auth-description">
+                Log in to access your account and saved calculation history.
+            </p>
+
+            <form action="php/login.php" method="POST">
+
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="you@example.com"
+                        autocomplete="email"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter your password"
+                        autocomplete="current-password"
+                        required
+                    >
+                </div>
+
+                <button type="submit" class="auth-submit">
+                    Log in <span>→</span>
+                </button>
+
+            </form>
+
+            <p class="auth-switch">
+                Don't have an account?
+                <a href="register.html">Create one</a>
+            </p>
+
+            <a href="index.html" class="back-link">← Back to home</a>
+
+        </section>
+    </main>
+
+    <footer>
+        Made for curious minds. <span>♥</span> MyCalc
+    </footer>
+
+</body>
+</html>

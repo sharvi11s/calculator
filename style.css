@@ -1,108 +1,345 @@
-body{
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+/* Color palette */
+:root {
+    --background: #000000;
+    --surface: #101010;
+    --surface-hover: #191919;
+
+    --blue: #a1d5ee;
+    --green: #d0f3a3;
+    --yellow: #fffba5;
+    --pink: #ffbbe4;
+    --orange: #f98118;
+
+    --text: #ffffff;
+    --text-muted: #b8b8b8;
+    --border: #333333;
 }
 
-#calculator {
-    font-family: Arial, sans-serif;
-    background-color: #919090;
-    border-radius: 20px;
-    width: 96vw;
-    height: 90vh;
-    padding: 20px;
+/* Reset */
+
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--background);
+    color: var(--text);
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    gap: 15px;
 }
 
-#display{
-    width: 100%;
-    padding: 15px;
-    font-size: 3rem;
-    box-sizing: border-box;
-    text-align: left;
-    border: none;
-    background-color: #acacac;
-    color: black;
-    flex-shrink: 0;
-    height: 18%;
-     box-sizing: border-box;
+/* Navigation */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 8%;
+    background: #000000;
+    border-bottom: 1px solid var(--border);
 }
 
-#keys {
+.logo {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: var(--orange);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--yellow);
+}
+
+.nav-links .login-btn {
+    padding: 11px 23px;
+    background: var(--pink);
+    color: #000000;
+    border-radius: 10px;
+    font-weight: 700;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.nav-links .login-btn:hover {
+    background: var(--yellow);
+    color: #191919;
+    transform: translateY(-2px);
+}
+
+/* Hero */
+
+.hero {
     flex: 1;
-    display: grid;
-    grid-template-columns: repeat(8, minmax(0, 1fr));
-    grid-template-rows: repeat(5, minmax(0, 1fr));
-    gap: 10px;
-    min-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    padding: 80px 8%;
 }
 
-button {
-    width: 75px;
-    height: 75px;
-    border-radius: 50%;
-    border: none;
+.hero-content {
+    max-width: 600px;
+}
+
+.eyebrow {
+    display: inline-block;
+    color: var(--green);
+    background: #172015;
+    border: 1px solid #35442b;
+    padding: 9px 13px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 22px;
+}
+
+h1 {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(2.5rem, 4.5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -2px;
+    margin-bottom: 25px;
+}
+
+h1 span {
+    color: var(--blue);
+}
+
+.description {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 32px;
+}
+
+/* Main button */
+
+.primary-btn {
+    display: inline-block;
+    padding: 15px 25px;
+    background: var(--orange);
+    color: #000000;
+    border: 1px solid var(--orange);
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.primary-btn:hover {
+    background: var(--yellow);
+    border-color: var(--yellow);
+    transform: translateY(-2px);
+}
+
+.note {
+    margin-top: 22px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* Calculator cards */
+
+.hero-visual {
+    width: 400px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.calc-card {
+    padding: 28px;
+    border-radius: 18px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    box-shadow: 0 12px 35px #00000060;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.calc-card:hover {
+    background: var(--surface-hover);
+}
+
+.simple-card {
+    transform: translateX(-15px);
+    border-color: #344955;
+}
+
+.engineering-card {
+    background: #15100f;
+    border-color: #70401e;
+    transform: translateX(15px);
+}
+
+.simple-card:hover {
+    transform: translateX(-15px) translateY(-3px);
+    border-color: var(--blue);
+}
+
+.engineering-card:hover {
+    transform: translateX(15px) translateY(-3px);
+    border-color: var(--orange);
+}
+
+/* Card icons */
+
+.card-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    background: #18252a;
+    color: var(--blue);
     font-size: 1.6rem;
-    cursor: pointer;
-}
-button:active{
-    background-color: #e0dfdf;
+    margin-bottom: 18px;
 }
 
-.operator-btn{
-    background-color: #f98118;
+.engineering-card .card-icon {
+    background: #302015;
+    color: var(--orange);
 }
 
-.operator-btn:hover{
-    background-color: #212121;
-    color: white;
+.card-label {
+    font-size: 0.7rem;
+    letter-spacing: 1.5px;
+    color: var(--green);
+    font-weight: 700;
+    margin-bottom: 9px;
 }
 
-.operator-btn-2{
-    background-color: #77b7ff;
+.engineering-card .card-label {
+    color: var(--orange);
 }
 
-.operator-btn-2:hover{
-    background-color: #abd2ff;
+.calc-card h2 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 9px;
 }
 
-.operator-btn-3{
-    background-color: #fff872;
+.calc-card p:last-child {
+    color: var(--text-muted);
+    font-size: 0.93rem;
+    line-height: 1.7;
 }
 
-.operator-btn-3:hover{
-    background-color: #fffaa1;
+/* Colorful detail strip */
+
+.calc-card::after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 100%;
+    margin-top: 22px;
+    border-radius: 10px;
+    background: var(--green);
 }
 
-.operator-btn-4{
-    background-color: rgb(166, 253, 119);
-}
-.operator-btn-4:hover{
-    background-color: rgb(196, 252, 166);
+.engineering-card::after {
+    background: var(--pink);
 }
 
-.operator-btn-5{
-    background-color: rgb(219, 113, 255);
-}
-.operator-btn-5:hover{
-    background-color: rgb(227, 171, 255);
+/* Footer */
+
+footer {
+    text-align: center;
+    padding: 22px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border);
 }
 
-.operator{
-    background-color: #212121;
-    color: white;
+footer span {
+    color: var(--yellow);
 }
 
-.operator:hover{
-    background-color: #e0dfdf;
-    color: black;
+/* Responsive layout */
+
+@media (max-width: 800px) {
+    .navbar {
+        padding: 20px 5%;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .hero {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 55px 7%;
+        gap: 45px;
+    }
+
+    .hero-visual {
+        width: 100%;
+    }
+
+    .simple-card,
+    .engineering-card,
+    .simple-card:hover,
+    .engineering-card:hover {
+        transform: none;
+    }
 }
 
-button:focus {
-    outline: none;
+/* Small screens */
+
+@media (max-width: 480px) {
+    .nav-links {
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 0.85rem;
+    }
+
+    .nav-links .login-btn {
+        padding: 9px 14px;
+    }
+
+    h1 {
+        letter-spacing: -1px;
+    }
+
+    .calc-card {
+        padding: 23px;
+    }
 }

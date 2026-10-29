@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account | MyCalc</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="register.css">
+</head>
+
+<body class="auth-page">
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">My<span>Calc</span></a>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="calculators.html">Calculators</a>
+            <a href="manual.html">Manual</a>
+        </div>
+    </nav>
+
+    <main class="auth-main">
+        <section class="auth-card">
+
+            <div class="auth-icon">✳</div>
+
+            <p class="auth-eyebrow">GET STARTED</p>
+
+            <h1>Create your <span>account.</span></h1>
+
+            <p class="auth-description">
+                Join MyCalc to explore calculators and keep track of your
+                calculation history.
+            </p>
+
+            <form action="php/register.php" method="POST">
+
+                <div class="form-group">
+                    <label for="name">Full name</label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Your name"
+                        autocomplete="name"
+                        maxlength="100"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="you@example.com"
+                        autocomplete="email"
+                        maxlength="254"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Create a password"
+                        autocomplete="new-password"
+                        minlength="8"
+                        required
+                    >
+                    <p class="field-hint">Use at least 8 characters.</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm-password">Confirm password</label>
+                    <input
+                        type="password"
+                        id="confirm-password"
+                        name="confirm_password"
+                        placeholder="Enter your password again"
+                        autocomplete="new-password"
+                        minlength="8"
+                        required
+                    >
+                </div>
+
+                <button type="submit" class="auth-submit">
+                    Create account <span>→</span>
+                </button>
+
+            </form>
+
+            <p class="auth-switch">
+                Already have an account?
+                <a href="login.html">Log in</a>
+            </p>
+
+            <a href="index.html" class="back-link">← Back to home</a>
+
+        </section>
+    </main>
+
+    <footer>
+        Made for curious minds. <span>♥</span> MyCalc
+    </footer>
+
+</body>
+</html>

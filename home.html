@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Home | MyCalc</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body class="home-page">
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">MyCalc<span>.</span></a>
+
+        <div class="nav-links">
+            <a href="home.html" class="active">Home</a>
+            <a href="calculators.html">Calculators</a>
+            <a href="manual.html">Manual</a>
+            <a href="login.html" class="login-btn">Login</a>
+        </div>
+    </nav>
+
+    <main>
+
+        <!-- Hero section -->
+        <section class="home-hero">
+
+            <div class="hero-content">
+                <p class="eyebrow">YOUR DAILY DOSE OF MATH</p>
+
+                <h1>
+                    Math is more<br>
+                    than <span class="pink-text">numbers.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Try a little math magic, solve brain teasers,
+                    and discover some surprisingly cool facts.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#magic-zone" class="home-btn primary-btn">
+                        Try a magic trick →
+                    </a>
+
+                    <a href="#daily-riddle" class="secondary-btn">
+                        Solve a riddle
+                    </a>
+                </div>
+            </div>
+
+            <!-- Simple mathematical decorations -->
+            <div class="floating-symbol symbol-plus">+</div>
+            <div class="floating-symbol symbol-pi">π</div>
+            <div class="floating-symbol symbol-root">√</div>
+
+        </section>
+
+
+        <!-- Math magic and brain games -->
+        <section class="section-container" id="magic-zone">
+
+            <div class="section-heading">
+                <p class="eyebrow yellow-text">LET'S PLAY</p>
+                <h2>A little <span class="green-text">math magic.</span></h2>
+                <p>Pick a challenge and see if you can crack it.</p>
+            </div>
+
+            <div class="fun-grid">
+
+                <!-- 1089 magic trick -->
+                <article class="fun-card">
+                    <div class="card-top">
+                        <div class="card-icon">✳</div>
+                        <span class="card-tag">NUMBER MAGIC</span>
+                    </div>
+
+                    <h3>The 1089 trick</h3>
+
+                    <p>
+                        Think of a three-digit number and follow
+                        a few steps. Can we predict your answer?
+                    </p>
+
+                    <a href="#magic-trick" class="card-link">
+                        Try the trick →
+                    </a>
+                </article>
+
+
+                <!-- Number pattern -->
+                <article class="fun-card">
+                    <div class="card-top">
+                        <div class="card-icon">#</div>
+                        <span class="card-tag">NUMBER PUZZLE</span>
+                    </div>
+
+                    <h3>Crack the code</h3>
+
+                    <p>
+                        2, 6, 12, 20, 30, ?
+                        Find the pattern and enter the missing number.
+                    </p>
+
+                    <a href="#number-puzzle" class="card-link">
+                        Solve the puzzle →
+                    </a>
+                </article>
+
+
+                <!-- Daily riddle -->
+                <article class="fun-card" id="daily-riddle">
+                    <div class="card-top">
+                        <div class="card-icon">?</div>
+                        <span class="card-tag">BRAIN TEASER</span>
+                    </div>
+
+                    <h3>Can you crack this?</h3>
+
+                    <p>
+                        The more you take, the more you leave behind.
+                        What am I?
+                    </p>
+
+                    <button
+                        type="button"
+                        class="card-link reveal-button"
+                        id="riddle-button">
+                        Reveal answer →
+                    </button>
+
+                    <p class="riddle-answer" id="riddle-answer" hidden>
+                        Footsteps! 👣
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+
+        <!-- 1089 magic trick -->
+        <section class="section-container trick-section" id="magic-trick">
+
+            <div class="section-heading">
+                <p class="eyebrow pink-text">MATH MAGIC</p>
+                <h2>Can you predict <span class="pink-text">1089?</span></h2>
+                <p>
+                    Follow these steps with a three-digit number.
+                    MyCalc has a prediction for you!
+                </p>
+            </div>
+
+            <div class="interactive-card">
+
+                <h3>Let's try it</h3>
+
+                <ol class="trick-steps">
+                    <li>Choose any three-digit number whose first and last digits differ by at least 2.</li>
+                    <li>Reverse its digits to make a new number.</li>
+                    <li>Subtract the smaller number from the larger one.</li>
+                    <li>Reverse the result. If it has only two digits, add a leading zero first.</li>
+                    <li>Add the result and its reverse together.</li>
+                </ol>
+
+                <button
+                    type="button"
+                    class="home-btn primary-btn"
+                    id="prediction-button">
+                    Reveal the prediction →
+                </button>
+
+                <p class="result-message" id="prediction-result" hidden>
+                    Your answer is 1089! ✨
+                </p>
+
+            </div>
+        </section>
+
+
+        <!-- Number puzzle -->
+        <section class="section-container trick-section" id="number-puzzle">
+
+            <div class="section-heading">
+                <p class="eyebrow blue-text">BRAIN GYM</p>
+                <h2>Crack the <span class="blue-text">number code.</span></h2>
+                <p>One number is missing. Can you find it?</p>
+            </div>
+
+            <div class="interactive-card">
+
+                <h3>2, 6, 12, 20, 30, ?</h3>
+
+                <p class="interactive-description">
+                    Look for the pattern between consecutive numbers.
+                </p>
+
+                <form id="puzzle-form" class="magic-form">
+
+                    <label for="puzzle-answer">Your answer</label>
+
+                    <input
+                        type="number"
+                        id="puzzle-answer"
+                        placeholder="Enter a number"
+                        required>
+
+                    <button type="submit" class="home-btn primary-btn">
+                        Check answer →
+                    </button>
+
+                </form>
+
+                <p class="result-message" id="puzzle-result" hidden></p>
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    id="hint-button">
+                    Need a hint?
+                </button>
+
+                <p id="puzzle-hint" hidden>
+                    Hint: Look at the differences between consecutive numbers.
+                </p>
+
+            </div>
+        </section>
+
+
+        <!-- Math facts -->
+        <section class="section-container curiosity-section">
+
+            <div class="section-heading">
+                <p class="eyebrow orange-text">DID YOU KNOW?</p>
+                <h2>The <span class="yellow-text">curiosity corner.</span></h2>
+                <p>Three little facts that make math more interesting.</p>
+            </div>
+
+            <div class="curiosity-grid">
+
+                <article class="fact-card fact-pink">
+                    <div class="fact-symbol">∞</div>
+                    <h3>Infinity has levels.</h3>
+                    <p>
+                        There are different sizes of infinity.
+                        The real numbers are uncountable, while the
+                        integers are countable.
+                    </p>
+                </article>
+
+                <article class="fact-card fact-green">
+                    <div class="fact-symbol">0.999...</div>
+                    <h3>It really equals one.</h3>
+                    <p>
+                        The repeating decimal 0.999... is exactly
+                        equal to 1, not just very close to it.
+                    </p>
+                </article>
+
+                <article class="fact-card fact-blue">
+                    <div class="fact-symbol">π</div>
+                    <h3>Pi never repeats.</h3>
+                    <p>
+                        Pi is irrational, which means its decimal
+                        digits go on forever without repeating
+                        in a fixed pattern.
+                    </p>
+                </article>
+
+            </div>
+
+            <div class="mathematician-note">
+                <p class="eyebrow green-text">MATH HAS A STORY</p>
+                <h3>Behind every equation, there's a story.</h3>
+                <p>
+                    From Srinivasa Ramanujan's extraordinary discoveries
+                    to Ada Lovelace's pioneering work in computing,
+                    mathematics has some fascinating people behind it.
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="home-footer">
+        <p>Made for curious minds. ♥ MyCalc</p>
+        <a href="index.html">Back to main page ↑</a>
+    </footer>
+
+
+    <!-- Interactive features -->
+    <script>
+
+        // Reveal the riddle answer
+        const riddleButton = document.getElementById("riddle-button");
+        const riddleAnswer = document.getElementById("riddle-answer");
+
+        riddleButton.addEventListener("click", function () {
+            riddleAnswer.hidden = !riddleAnswer.hidden;
+
+            riddleButton.textContent = riddleAnswer.hidden
+                ? "Reveal answer →"
+                : "Hide answer ↑";
+        });
+
+
+        // Reveal the 1089 prediction
+        const predictionButton = document.getElementById("prediction-button");
+        const predictionResult = document.getElementById("prediction-result");
+
+        predictionButton.addEventListener("click", function () {
+            predictionResult.hidden = false;
+            predictionButton.textContent = "Prediction revealed!";
+        });
+
+
+        // Check the number puzzle answer
+        const puzzleForm = document.getElementById("puzzle-form");
+        const puzzleAnswer = document.getElementById("puzzle-answer");
+        const puzzleResult = document.getElementById("puzzle-result");
+
+        puzzleForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const answer = Number(puzzleAnswer.value);
+
+            if (answer === 42) {
+                puzzleResult.textContent = "Correct! 🎉 The differences are 4, 6, 8, 10, and 12.";
+            } else {
+                puzzleResult.textContent = "Not quite! Try again. Look at how much each number increases.";
+            }
+
+            puzzleResult.hidden = false;
+        });
+
+
+        // Show a hint for the number puzzle
+        const hintButton = document.getElementById("hint-button");
+        const puzzleHint = document.getElementById("puzzle-hint");
+
+        hintButton.addEventListener("click", function () {
+            puzzleHint.hidden = !puzzleHint.hidden;
+
+            hintButton.textContent = puzzleHint.hidden
+                ? "Need a hint?"
+                : "Hide hint";
+        });
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,201 @@
+/* Manual Page */
+
+.manual-container {
+    flex: 1;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 75px 6%;
+}
+
+/* Page Heading */
+
+.manual-heading {
+    max-width: 700px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.manual-heading h1 {
+    margin-bottom: 18px;
+}
+
+.manual-heading h1 span {
+    color: var(--pink);
+}
+
+.manual-heading > p:last-child {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+/* Guide Cards */
+
+.manual-options {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+}
+
+.manual-card {
+    padding: 35px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: var(--surface);
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease;
+}
+
+.manual-card:hover {
+    transform: translateY(-5px);
+    background: var(--surface-hover);
+}
+
+.functions-card {
+    border-color: #344955;
+}
+
+.functions-card:hover {
+    border-color: var(--blue);
+}
+
+.operations-card {
+    border-color: #514b2c;
+}
+
+.operations-card:hover {
+    border-color: var(--yellow);
+}
+
+/* Guide Icons */
+
+.manual-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    margin-bottom: 25px;
+    border-radius: 14px;
+    background: #18252a;
+    color: var(--blue);
+    font-family: 'Manrope', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.operations-card .manual-icon {
+    background: #292719;
+    color: var(--yellow);
+    font-size: 1.8rem;
+}
+
+/* Card Text */
+
+.manual-label {
+    margin-bottom: 12px;
+    color: var(--green);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.operations-card .manual-label {
+    color: var(--yellow);
+}
+
+.manual-card h2 {
+    margin-bottom: 15px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.45rem;
+    font-weight: 700;
+}
+
+.manual-description {
+    min-height: 80px;
+    margin-bottom: 25px;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+/* Guide Links */
+
+.manual-link {
+    display: inline-block;
+    padding: 12px 17px;
+    border-radius: 9px;
+    background: var(--blue);
+    color: #000000;
+    font-weight: 700;
+    text-decoration: none;
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+.manual-link:hover {
+    transform: translateY(-2px);
+    background: var(--yellow);
+}
+
+.operations-card .manual-link {
+    background: var(--yellow);
+}
+
+.operations-card .manual-link:hover {
+    background: var(--pink);
+}
+
+/* Helpful Tip */
+
+.manual-note {
+    margin-top: 35px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.manual-note span {
+    color: var(--green);
+    font-weight: 700;
+}
+
+/* Footer */
+
+.manual-footer {
+    margin-top: auto;
+}
+
+.manual-footer span {
+    color: var(--pink);
+}
+
+/* Responsive Layout */
+
+@media (max-width: 700px) {
+    .manual-container {
+        padding: 50px 6%;
+    }
+
+    .manual-heading {
+        margin-bottom: 35px;
+    }
+
+    .manual-options {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .manual-card {
+        padding: 28px;
+    }
+
+    .manual-description {
+        min-height: auto;
+    }
+}
