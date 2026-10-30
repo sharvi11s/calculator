@@ -462,7 +462,6 @@ body {
         transition: none !important;
         scroll-behavior: auto;
     }
-<<<<<<< HEAD:enggCalc/engg.css
 }
 
 /* Prevent horizontal page shifting */
@@ -492,6 +491,4 @@ button {
 /* Prevent buttons from shifting on hover */
 button:hover {
     transform: none;
-=======
->>>>>>> enggCalc:engg.css
 }
