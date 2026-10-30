@@ -1,0 +1,165 @@
+
+/* ==============================
+   MyCalc - Calculation History
+   ============================== */
+
+.history-page {
+    background: #000000;
+    color: #ffffff;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+}
+
+.history-container {
+    width: min(900px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 70px 0;
+}
+
+.history-heading {
+    margin-bottom: 35px;
+}
+
+.history-heading .eyebrow {
+    color: #d0f3a3;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.history-heading h1 {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    margin-bottom: 12px;
+}
+
+.history-heading p {
+    color: #b8b8b8;
+    line-height: 1.7;
+}
+
+.history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.history-item {
+    padding: 24px;
+    background: #101010;
+    border: 1px solid #333333;
+    border-radius: 12px;
+    transition: border-color 0.2s ease;
+}
+
+.history-item:hover {
+    border-color: #555555;
+}
+
+.history-item-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.history-type {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+/* Simple Calculator - Green and Pink */
+.history-type.simple {
+    color: #ffbbe4;
+}
+
+.history-item.simple {
+    border-left: 3px solid #d0f3a3;
+}
+
+.history-item.simple .history-result {
+    color: #d0f3a3;
+}
+
+/* Engineering Calculator - Blue and Orange */
+.history-type.engineering {
+    color: #a1d5ee;
+}
+
+.history-item.engineering {
+    border-left: 3px solid #f98118;
+}
+
+.history-item.engineering .history-result {
+    color: #a1d5ee;
+}
+
+.history-date {
+    color: #888888;
+    font-size: 0.78rem;
+}
+
+.history-expression {
+    color: #ffffff;
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+    margin-bottom: 12px;
+}
+
+.history-result {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 800;
+    overflow-wrap: anywhere;
+}
+
+.empty-history {
+    padding: 55px 25px;
+    background: #101010;
+    border: 1px solid #333333;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.empty-history h2 {
+    font-family: 'Manrope', sans-serif;
+    margin-bottom: 12px;
+}
+
+.empty-history p {
+    color: #b8b8b8;
+    line-height: 1.7;
+}
+
+.history-back {
+    display: inline-block;
+    margin-top: 30px;
+    color: #a1d5ee;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.history-back:hover {
+    color: #d0f3a3;
+}
+
+@media (max-width: 600px) {
+    .history-container {
+        width: calc(100% - 36px);
+        padding: 45px 0;
+    }
+
+    .history-item {
+        padding: 20px;
+    }
+}

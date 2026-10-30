@@ -37,17 +37,17 @@
                 calculation history.
             </p>
 
-            <form action="php/register.php" method="POST">
+            <form action="../backend/register.php" method="POST">
 
                 <div class="form-group">
-                    <label for="name">Full name</label>
+                    <label for="username">Full name</label>
                     <input
                         type="text"
-                        id="name"
-                        name="name"
+                        id="username"
+                        name="username"
                         placeholder="Your name"
                         autocomplete="name"
-                        maxlength="100"
+                        maxlength="50"
                         required
                     >
                 </div>
@@ -60,7 +60,7 @@
                         name="email"
                         placeholder="you@example.com"
                         autocomplete="email"
-                        maxlength="254"
+                        maxlength="100"
                         required
                     >
                 </div>
